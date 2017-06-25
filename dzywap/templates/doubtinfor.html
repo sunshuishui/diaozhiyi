@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>{$ninfor.title}-上海雕之艺纹绣-触屏版</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/pages.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/koala.min.1.5.js"></script>
+</head>
+
+<body>
+
+<!--最顶部-->
+{include file='header.html'}
+
+
+
+<!--走进雕之艺--->
+<div id="zj">
+	<div class="zj_list">
+		<a href="customer.php?type=1"{if $type==1} class="dangqian"{/if}>关于我们</a><a href="news.php" class="dangqian">新闻动态</a><a href="customer.php?type=2"{if $type==2} class="dangqian"{/if}>品牌理念</a><a href="customer.php?type=3"{if $type==3} class="dangqian"{/if}>联系我们</a>
+	</div>
+</div>
+
+<div id="zj_cont">
+	
+	<div class="dtxiangxi22">
+		<p class="dtxiangxi_bt22">{$ninfor.title}</p>
+		<p class="dtxiangxi_date22"><span>作者：{$ninfor.author}</span><span>日期  ：{$ninfor.addtime}</span></p>
+		<div class="dtxiangxi_nr22">
+			{$ninfor.content}
+		</div>
+	</div>
+	
+</div>
+
+{include file='footer.html'}
+
+</body>
+</html>

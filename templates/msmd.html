@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>上海雕之艺纹绣-官网-名师名店</title>
+<meta name="keywords" content="雕之艺纹绣,分店查询,名师名店,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/pages.css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<!--最顶端logo-->
+{include file='header.html'}
+<!--banner-->
+<div id="banner"></div>
+
+
+<!--纹绣名师、纹绣名店列表-->
+<div id="ms">
+	<div class="px_list">
+		<ul>
+			<li{if $type==1} class="hover3"{/if}><a href="?type=1">纹绣名师</a><img src="../img/xiatou.png" /></li>
+			<li{if $type==2} class="hover3"{/if}><a href="?type=2">纹绣名店</a><img src="../img/xiatou.png" /></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>
+
+{if $type==1}
+<!--纹绣名师-->
+<div id="ms_list">
+	<div class="ms_list">
+	<div class="wc960" style="padding-top:60px; margin-top:0px;">
+					<div id="wrapBox1" class="wrapBox" style="height:auto;">			
+						<ul id="count1" class="count" style="height:auto;">
+                        {section name=sn loop=$teacher}
+							<li>
+								<div style="background:url(uploads/{$teacher[sn].pic}) no-repeat center center"><img src="../img/jybg.png" /></div>
+								<div class="jy_js">
+									<p class="styleone">{$teacher[sn].name}</p><p>{$teacher[sn].infor|truncate:100}</p>
+								</div>
+								<div class="zx"><a href="#">立即咨询</a></div>					
+							</li>
+                            {/section}
+							
+						</ul>	
+						<div class="clear"></div>			
+					</div>
+					
+					<a id="right1" class="prev icon btn" style="position:absolute; top:0px; right:0px;"></a>
+					<a id="left1" class="next icon btn" style="position:absolute; top:0px; right:50px;"></a>			
+			</div>
+			<script type="text/javascript" src="../js/scroll.1.3.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+				
+					$("#count1").dayuwscroll({
+						parent_ele:'#wrapBox1',
+						list_btn:'#tabT04',
+						pre_btn:'#left1',
+						next_btn:'#right1',
+						path: 'left',
+						auto:true,
+						time:3000,
+						num:4,
+						gd_num:4,
+						waite_time:1000
+					});
+				
+				});
+			</script>
+	</div>
+</div>
+{else if $type==2}
+<div id="ms_list" style="margin-bottom:100px;">
+	<div class="ms_list">
+	<div class="wc960" style="padding-top:80px; margin-top:0px; padding-left:58px;">
+					<div id="wrapBox1" class="wrapBox" style="height:auto;">			
+						<ul id="count1" class="count" style="height:auto;">
+                        {section name=sn loop=$store}
+							<li class="yy" style="width:880px;margin:0px;">
+							
+								<div class="yy_img"><img src="uploads/{$store[sn].pic1}" /></div>
+								
+								<div class="yy_js">
+								
+									<p class="js_imgg"><img src="uploads/{$store[sn].pic2}"  style="margin-right:5px;" /><img src="uploads/{$store[sn].pic3}" /></p>
+									
+									<div class="cjwt_list">
+										<p class="cjwt_list_bt">{$store[sn].title}</p>
+										<p class="cjwt_list_js">{$store[sn].infor|truncate:120}</p>
+									</div>
+								</div>
+							</li>
+                            {/section}
+							
+						</ul>	
+						<div class="clear"></div>			
+					</div>
+					
+					<a id="right1" class="prev icon btn" style="position:absolute; top:0px; right:80px;"></a>
+					<a id="left1" class="next icon btn" style="position:absolute; top:0px; right:140px;"></a>			
+			</div>
+			<script type="text/javascript" src="../js/scroll.1.3.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+				
+					$("#count1").dayuwscroll({
+						parent_ele:'#wrapBox1',
+						list_btn:'#tabT04',
+						pre_btn:'#left1',
+						next_btn:'#right1',
+						path: 'left',
+						auto:true,
+						time:3000,
+						num:1,
+						gd_num:1,
+						waite_time:1000
+					});
+				
+				});
+			</script>
+	</div>
+</div>
+{/if}
+<!--纹绣培训-->
+<div id="wxpx">
+	
+</div>
+
+<!--最顶部--->
+{include file='footer.html'}
+</body>
+</html>

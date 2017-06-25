@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>上海雕之艺纹绣-官网-触屏版</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/pages.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/koala.min.1.5.js"></script>
+</head>
+
+<body>
+
+<!--最顶部-->
+{include file='header.html'}
+
+<!--走进雕之艺--->
+<div id="zj">
+	<div class="zj_list">
+		<a href="customer.php?type=1"{if $type==1} class="dangqian"{/if}>关于我们</a><a href="news.php">新闻动态</a><a href="customer.php?type=2"{if $type==2} class="dangqian"{/if}>品牌理念</a><a href="customer.php?type=3"{if $type==3} class="dangqian"{/if}>联系我们</a>
+	</div>
+</div>
+{if $type==1}
+<div id="zj_cont">
+	<div class="dtxiangxi">
+		<p class="dtxiangxi_bt">雕之艺简介</p>
+		<p class="dtxiangxi_img"><img src="../uploads/{$customer.pic}" /></p>
+		<div class="dtxiangxi_nr">
+			{$customer.infor}
+			
+		</div>
+	</div>
+</div>
+{else if $type==2}
+<div id="zj_cont">
+	<div class="dtxiangxi">
+		<p class="dtxiangxi_bt">品牌理念</p>
+		<p class="dtxiangxi_img"><img src="../uploads/{$customer.pic}" /></p>
+		<div class="dtxiangxi_nr">
+			{$customer.infor}
+		</div>
+	</div>
+</div>
+{else if $type==3}
+{literal}
+<script>
+	$(function(){
+		$('.lianxi table:eq(0)').css({"display":"none"});	
+		$td1=$('.lianxi table:eq(0) tr:eq(1) td:eq(0)').html();
+		$td2=$('.lianxi table:eq(0) tr:eq(1) td:eq(1)').html();
+		$('.lianxi table:eq(1) tr:eq(0) td:eq(0)').html($td1);
+		$('.lianxi table:eq(1) tr:eq(2) td:eq(0)').html($td2);
+	})
+</script>
+{/literal}
+<div id="zj_cont">
+	<div class="lianxi">
+		{$customer.infor}
+        <table width="100%">
+        	<tr>
+            	<td bgcolor="#FFFFFF" style="padding-left:10px; padding-bottom:15px;"></td>
+            </tr>
+            <tr><td height="10"></td></tr>
+            <tr>
+            	<td bgcolor="#FFFFFF" style="padding-left:10px; padding-bottom:15px;"></td>
+            </tr>
+        </table>
+	</div>
+</div>
+{/if}
+<!--最底部菜单-->
+{include file='footer.html'}
+</body>
+</html>

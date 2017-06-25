@@ -1,0 +1,35 @@
+<!--最顶端logo-->
+<div id="top">
+	<div class="top_cont">
+		<span class="logo"><a href="{$domain}"><img src="img/logo.png" /></a></span><span class="dianhua"><img src="img/dianhua.png" /></span>
+	</div>
+</div>
+
+<!--导航-->
+<div id="navigation">
+	<div class="nav">
+		<ul>
+			<li{if $hovernav=='index'} class="hover2"{/if}><a href="{$domain}">首页</a></li>
+			<li{if $hovernav=='customer' or $hovernav=='news' } class="hover2"{/if}><a href="customer.php?type=1">走进雕之艺</a>
+				<div class="menu">
+					<p><a href="customer.php?type=1">关于我们</a></p>
+					<p><a href="news.php">新闻动态</a></p>
+					<p><a href="customer.php?type=2">品牌理念</a></p>
+					<p><a href="customer.php?type=3">联系我们</a></p>
+				</div>
+			</li>
+			<li{if $hovernav=='peixun'} class="hover2"{/if}><a href="peixun.php?type=1">纹绣培训</a>
+				<div class="menu">
+					<p><a href="peixun.php?type=1">纹绣培训</a></p>
+					<p><a href="peixun.php?type=2">韩式纹眉培训</a></p>
+				</div>
+			</li>
+			<li{if $hovernav=='product'} class="hover2"{/if}><a href="product.php">纹绣产品</a></li>
+			<li{if $hovernav=='zuopin'} class="hover2"{/if}><a href="zuopin.php">作品展示</a></li>
+			<li{if $hovernav=='msmd'} class="hover2"{/if}><a href="msmd.php">名师名店</a></li>
+			<li{if $hovernav=='doubt'} class="hover2"{/if}><a href="doubt.php">常见问题</a></li>
+			<li><a href="customer.php?type=3">联系我们</a></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+</div>

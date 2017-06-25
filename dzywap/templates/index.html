@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>上海雕之艺纹绣-官网-触屏版</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/koala.min.1.5.js"></script>
+</head>
+
+<body>
+
+<!--最顶部-->
+{include file='header.html'}
+
+<!--首页内容区域--->
+<div id="content">
+	<div class="partone">
+		<div class="partone_img"><img src="images/shouye.jpg" /></div>
+		<div class="partone_js">
+			<ul>
+				<li><a href="news.php"><img src="images/icon1.png"  height="30"/><p>新闻动态</p></a></li>
+				<li><a href="product.php"><img src="images/icon2.png"  height="30" /><p>纹绣产品</p></a></li>
+				<li><a href="doubt.php"><img src="images/icon3.png"  height="30" /><p>常见问题</p></a></li>
+				<li><a href="xiangmu.php"><img src="images/icon4.png"  height="30" /><p>纹绣项目</p></a></li>
+				<div class="clear"></div>
+			</ul>
+			<div style="clear:both"></div>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+	
+	<div class="parttwo">
+		<ul>
+        {section name=sn loop=$peixun}
+			<li>
+				<a href="pxinfor.php?id={$peixun[sn].id}">
+					<div class="parttwo_img"><img src="../uploads/{$peixun[sn].logo}" /></div>
+					<div class="parttwo_date"><p>学制：{$peixun[sn].xuezhi}个月</p><p><span>{$peixun[sn].feiyong}</span>元</p></div>
+					<div class="parttwo_js">
+						<p class="bt">{$peixun[sn].title}</p>
+						<p>{$peixun[sn].px_content|truncate:30}</p>
+					</div>
+					<div class="clear"></div>
+				</a>
+			</li>
+            {/section}
+		</ul>
+	</div>
+</div>
+
+
+<!--最底部菜单-->
+{include file='footer.html'}
+</body>
+</html>

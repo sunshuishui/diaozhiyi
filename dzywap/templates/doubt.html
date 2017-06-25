@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>上海雕之艺纹绣-常见问题-触屏版</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/pages.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/koala.min.1.5.js"></script>
+</head>
+
+<body>
+
+<!--最顶部-->
+{include file='header.html'}
+
+
+<!--小导航--->
+<div id="xiaonav" style="margin-bottom:2%;">
+	<p class="biaoti">首页&nbsp;&nbsp;/&nbsp;&nbsp;常见问题</p>
+</div>
+
+<div id="zj_cont">
+	<div class="cjwt">
+		<ul>
+        {section name=sn loop=$article}
+			<li{if ($smarty.section.sn.index+1)%2==0} style="margin-right:0px;"{/if}>
+				<a href="doubtinfor.php?id={$article[sn].id}">
+					<div class="cjwt_list">
+						<p class="cjwt_list_bt">{$article[sn].title}</p>
+						<p class="cjwt_list_js">{$article[sn].content|truncate:100}</p>
+					</div>
+				</a>
+			</li>
+        {/section}
+  </ul>
+		<div class="clear"></div>
+	</div>
+</div>
+
+
+<!--最底部菜单-->
+{include file='footer.html'}
+</body>
+</html>

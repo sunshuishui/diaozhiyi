@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<title>{$pxinfor.title}-上海雕之艺纹绣-纹绣项目-触屏版</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/pages.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/koala.min.1.5.js"></script>
+</head>
+
+<body>
+
+<!--最顶部-->
+{include file='header.html'}
+
+<!--小导航--->
+<div id="xiaonav">
+	<p class="biaoti" style="padding-left:0%;margin-bottom:2%;">首页&nbsp;&nbsp;/&nbsp;&nbsp;纹绣项目</p>
+</div>
+
+<div id="zj_cont">
+	
+	<div class="wxpx_xiaji">
+		<p class="wxpx_xiaji_bt">{$pxinfor.title}</p>
+		<p class="wxpx_xiaji_img"><img src="../uploads/{$pxinfor.pic_thumb}" /></p>
+		<div class="wxpx_xiaji_js">
+			<ul>
+				<li><p>培训周期</p><p class="style9">{$pxinfor.xuezhi}个月</p></li>
+				<li><p>培训费用</p><p class="style9">{$pxinfor.feiyong}元</p></li>
+				<li style="border:none; font-size:14px; color:#745d4e;padding-top:10px; text-align:left;"><p>咨询热线</p><p>021&mdash;53061027</p></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="wxpx_xiaji_kc">
+			<p class="bt">培训课程</p>
+			{$pxinfor.px_content}
+		</div>
+		
+		<div class="wxpx_xiaji_kc">
+			<p class="bt">我们的优势</p>
+			{$pxinfor.ys_content}
+		</div>
+	</div>
+	
+</div>
+
+
+<!--最底部菜单-->
+{include file='footer.html'}
+</body>
+</html>

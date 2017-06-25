@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>上海雕之艺纹绣-纹绣培训-纹眉培训</title>
+<meta name="keywords" content="雕之艺纹绣培训,雕之艺纹眉培训,,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/pages.css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<!--最顶端logo-->
+{include file='header.html'}
+
+<!--banner-->
+<div id="banner"></div>
+
+<!--纹绣培训、韩式纹眉培训列表-->
+<div id="px">
+	<div class="px_list">
+		<ul>
+			<li{if $type==1} class="hover3"{/if}><a href="?type=1">纹绣培训</a><img src="../img/xiatou.png" /></li>
+			<li{if $type==2} class="hover3"{/if}><a href="?type=2">韩式纹眉培训</a><img src="../img/xiatou.png" /></li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="pxck">
+		<ul>
+        {section name=sn loop=$peixun}
+			<li>
+				<div class="pxck_img"><a href="pxinfor.php?id={$peixun[sn].id}" title="{$peixun[sn].title}"><img src="uploads/{$peixun[sn].logo}" width="230" /></a></div>
+				<div class="pxck_km">
+					<p class="km_bt"><a href="pxinfor.php?id={$peixun[sn].id}" title="{$peixun[sn].title}">{$peixun[sn].title}</a></p>
+					<p class="km_xz">学制：{$peixun[sn].xuezhi}个月</p>
+					<p class="km_jg"><span>{$peixun[sn].feiyong}</span>元</p>
+					<p class="km_bm">报名热线：021-53061027</p>
+				</div>
+				<div class="pxck_ck">
+					<p class="ck_bt">主要课程</p>
+					<p class="ck_nr">{$peixun[sn].kecheng}</p>
+				</div>
+				<div class="pxck_ys">
+					<p class="ys_bt">课程优势</p>
+					<p class="ys_nr">{$peixun[sn].ys_content|truncate:100}</p>
+				</div>
+			</li>
+		{/section}	
+		</ul>
+	
+	</div>
+	
+</div>
+
+<!--纹绣培训-->
+<div id="wxpx">
+	
+</div>
+
+<!--最顶部--->
+{include file='footer.html'}
+</body>
+</html>

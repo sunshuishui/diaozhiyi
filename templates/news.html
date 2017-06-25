@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>上海雕之艺纹绣-最新动态</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="../css/style.css" />
+<link type="text/css" rel="stylesheet" href="../css/pages.css" />
+<script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+
+<body>
+<!--最顶端logo-->
+{include file='header.html'}
+<!--banner-->
+<div id="banner"></div>
+
+<!--关于我们、新闻动态列表-->
+<div id="zj">
+	<div class="zj_list">
+		<a href="customer.php?type=1">关于我们</a><a class="dangqian">新闻动态</a><a href="customer.php?type=2">品牌理念</a><a href="customer.php?type=3">联系我们</a>
+	</div>
+</div>
+
+<!--品牌理念-->
+<div id="aboutus">
+	<p class="biaoti">首页&nbsp;&nbsp;/&nbsp;&nbsp;走进雕之艺&nbsp;&nbsp;/&nbsp;&nbsp;新闻动态</p>
+	<div class="dongtai">
+		<ul>
+        {section name=sn loop=$article}
+			<li>
+				<div class="dt_img"><a href="ninfor.php?id={$article[sn].id}" title="{$article[sn].title}"><img src="uploads/{$article[sn].pic}" width="170" height="105" /></a></div>
+				<div class="dt_js">
+					<p class="dt_js_bt"><a href="ninfor.php?id={$article[sn].id}" title="{$article[sn].title}">{$article[sn].title}</a></p>
+					<p class="dt_js_date"><span>日期：{$article[sn].addtime}</span>作者：{if $article[sn].author}{$article[sn].author}{else}雕之艺{/if}</p>
+					<p class="dt_js_nr">{$article[sn].content|truncate:105}</p>
+				</div>
+				<div class="clear"></div>
+			</li>
+		{/section}	
+		</ul>
+	</div>
+	{if $countpage>1}
+	<div id="fenye">
+			<ul>
+				{if $page>1}<li><a href="?page={$page-1}" class="prev">Prev</a></li>{/if}
+                {section name=sn loop=$countpage}
+				<li><a href="?page={$smarty.section.sn.index+1}"{if $page==($smarty.section.sn.index+1)} class="dangqian"{/if}>{$smarty.section.sn.index+1}</a></li>
+                {/section}
+				{if $page<$countpage}<li><a href="?page={$page+1}">Next</a></li>{/if}
+			</ul>
+	</div>
+    {/if}
+</div>
+
+<!--最顶部--->
+{include file='footer.html'}
+</body>
+</html>

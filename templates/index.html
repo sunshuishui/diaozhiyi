@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>上海雕之艺纹绣-官网-首页</title>
+<meta name="keywords" content="雕之艺纹绣,上海纹绣,纹眉,绣眉,漂唇" />
+<meta name="description" content="上海雕之艺纹绣是上海纹绣第一品牌，也是全国最早的纹绣机构之一，拥有国际顶级的纹绣专家，过硬的技术，实惠的价格得到上海纹绣爱好者的一致好评。服务项目有：纹眉、绣眉、漂唇、纹绣培训、纹身等" />
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body>
+{include file='header.html'}
+
+<!--banner-->
+<div id="Adv">
+	{section name=sn loop=$ads}
+	<div class="ImgList" style="background:url('uploads/{$ads[sn].pic}') center"><a {if $ads[sn].link}href="{$ads[sn].link}"{/if} title="{$ads[sn].title}"></a></div>
+    {/section}
+	<ul class="button">
+    {section name=sn loop=$ads}
+		<li{if $smarty.section.sn.index==0} class="hover"{/if}></li>
+    {/section}
+	</ul>
+</div>
+
+<!--新闻资讯-->
+<div id="newszixun">
+	<div class="zixun_cont">
+		<div class="zixun_cont_lb">
+			<p class="lb_bt">新闻资讯<span>NEWS</span></p>
+			
+			<div class="bd_c4top">
+				   <div class="bd_lbtn"></div>
+				   <div class="bd_chgBox">
+						<div class="bd_long">
+							 <ul>
+                             {section name=sn loop=$news}
+								  <li>
+								  		<div class="xw">
+											<div class="xw_img"><a href="ninfor.php?id={$news[sn].id}" title="{$news[sn].title}"><img src="uploads/{$news[sn].pic}" width="170" height="105" /></a></div>
+											<div class="xw_js">
+												<p class="st"><a href="ninfor.php?id={$news[sn].id}" title="{$news[sn].title}">{$news[sn].title}</a></p>
+												<p>{$news[sn].content|truncate:125}</p>
+											</div>
+											<div class="xw_date"><p class="dateone">{$news[sn].addtime|date_format:'%d'}</p><p class="datetwo">{$news[sn].addtime|date_format:'%Y.%m'}</p></div>
+										</div>
+								  </li>
+								  {/section}
+								  
+							 </ul>
+						</div>
+				   </div>
+				   <div class="bd_rbtn"></div>
+	 		 </div>
+			<script type="text/javascript" src="js/newsscroll.js" /></script>
+		</div>
+		<div class="zixun_cont_sj">
+			<p class="sj_bt">手机端输入m.diaozhiyi.com访问</p>
+			<p class="sj_wx"><span class="sj_wx_img"><img src="img/wx.jpg" /></span><span class="fw">访问手机版</span></p>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+
+
+<!---精品项目-->
+<div id="jp">
+	<div class="jp_cont">
+		<p class="bt"><span class="dabt">精品项目</span><span class="dabt22">Goods project</span></p>
+		
+		<div class="wc960">
+					<div id="wrapBox1" class="wrapBox">			
+						<ul id="count1" class="count">
+                        {section name=sn loop=$xiangmu}
+							<li class="qq">
+								<a href="xinfor.php?id={$xiangmu[sn].id}" class="img_wrap" title="{$xiangmu[sn].title}">
+									<div class="cplist">
+										<div class="cplist_img"><img src="uploads/{$xiangmu[sn].pic}" width="" height="" /></div>
+										<div class="cplist_js">
+											<p class="hh"><span class="xbt">{$xiangmu[sn].title}</span><span class="jt"><img src="img/shang.png" /></span><div class="clear"></div></p>
+											<p class="xx">{$xiangmu[sn].content|truncate:45}</p>
+										</div>
+									</div>
+								
+								</a>
+								
+							</li>
+                            {/section}
+						</ul>				
+					</div>
+					
+					<a id="right1" class="prev icon btn"></a>
+					<a id="left1" class="next icon btn"></a>			</div>
+			<script type="text/javascript" src="js/scroll.1.3.js"></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+				
+					$("#count1").dayuwscroll({
+						parent_ele:'#wrapBox1',
+						list_btn:'#tabT04',
+						pre_btn:'#left1',
+						next_btn:'#right1',
+						path: 'left',
+						auto:true,
+						time:3000,
+						num:4,
+						gd_num:4,
+						waite_time:1000
+					});
+				
+				});
+			</script>
+	</div>
+</div>
+
+<!---纹绣培训-->
+<div id="peixun">
+	<div class="px">
+		<p class="bt"><span class="dabt">纹绣培训</span><span class="dabt22">Wenxiu training</span></p>
+		
+		<div class="px_cont">
+		
+			<div class="px_bt">
+				<ul>
+                	{section name=sn loop=$peixun}
+					<li{if $smarty.section.sn.index==0} class="hover"{else} class="px_bt_icon"{/if}>
+						<p class="px_bt_icon">{if $peixun[sn].type==1}纹绣培训{else}纹眉培训{/if}</p>
+						<div class="px_bt_js"><p class="style1">{$peixun[sn].title}</p><p>学制：{$peixun[sn].xuezhi}个月</p></div>
+						<div class="clear"></div>
+					</li>
+                    {/section}
+				</ul>
+			</div>
+			
+			<div class="px_nr">
+			{section name=sn loop=$peixun}
+				<div class="hide"{if $smarty.section.sn.index==0} style="display:block"{/if}>
+					<div class="hide_img"><a href="pxinfor.php?id={$peixun[sn].id}"><img src="uploads/{$peixun[sn].pic_thumb}" height="325" /></a></div>
+					<div class="hide_js">
+						<p class="hide_jsbt">{$peixun[sn].title}</p>
+						<p style="margin-bottom:15px;"><span class="style2"><span class="style3">学制</span>：6个月</span><span class="style2"><span class="style3">费用</span>：5900</span></p>
+						<div>
+							<p class="style5">主要课程：</p>
+							<p class="style6">
+                            {$kecheng=explode(',',$peixun[sn].kecheng)}
+                            {section name=hj loop=$kecheng}
+                            <span class="style4">{$kecheng[hj]}</span>
+                            {/section}
+                            </p>
+							<div class="clear"></div>
+						</div>
+						<p class="style7">详细内容：</p>
+						<p class="style8">{$peixun[sn].px_content|truncate:50}<a href="#">【更多】</a></p>
+						<a href="#" class="ljzixun">
+								<p>立即咨询</p>
+								<p style="font-size:13px;">consulting</p>
+						</a>
+					</div>
+				</div>
+			 {/section}
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		
+	</div>
+</div>
+
+
+<!--精英团队--->
+<div id="tuandui">
+	<div class="td">
+		<p class="bt"><span class="dabt">精英团队</span><span class="dabt22">Wenxiu masters</span></p>
+	</div>
+</div>
+
+<div id="tuandui_nr">
+	<div class="td_nr">
+		<div class="td_nr_list">
+			<ul>
+            {section name=sn loop=$teacher}
+				<li>
+					<div style="background:url(uploads/{$teacher[sn].pic}) no-repeat center center"><img src="img/jybg.png" /></div>
+					<div class="jy_js">
+						<p class="styleone">{$teacher[sn].name}</p><p>{$teacher[sn].infor|truncate:50}</p>
+					</div>
+					<div class="zx"><a href="#">立即咨询</a></div>
+				</li>
+				{/section}
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<!--常见问题和名师名店--->
+<div id="wtmd">
+	<div class="wtmd_cont">
+	
+		<div class="wt">
+			<p class="bt" style="width:390px;"><span class="dabt">常见问题</span><span class="dabt22" style="width:150px;">Common problems</span></p>
+			<div class="wt_cont">
+				<ul>
+                {section name=sn loop=$doubt}
+					<li><a href="doubtinfor.php?id={$doubt[sn].id}" title="{$doubt[sn].title}">{$doubt[sn].title|truncate:18}</a></li>
+                {/section}
+				</ul>
+			</div>
+		</div>
+		
+		<div class="md">
+			<p class="bt" style="width:590px;"><span class="dabt">名师名店</span><span class="dabt22" style="width:150px;">Common problems</span></p>
+			<div class="md_cont">
+				<ul>
+                {section name=sn loop=$store}
+					<li>
+						<div class="md_cont_img"><img src="uploads/{$store[sn].pic1}" width="150" /></div>
+						<p class="md_cont_dd">{$store[sn].title}</p>
+				</li>
+               {/section}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--最顶部--->
+{include file='footer.html'}
+</body>
+</html>

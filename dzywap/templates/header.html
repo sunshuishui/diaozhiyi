@@ -1,0 +1,57 @@
+<div id="top">
+		<div class="top_nav_img"><img src="images/navicon.png" height="50px"/></div>
+		<div class="top_nav_list">
+			<ul>
+				<li><a href="customer.php?type=1">关于我们</a></li>
+				<li><a href="peixun.php">纹绣培训</a></li>
+				<li><a href="product.php">纹绣产品</a></li>
+				<li><a href="zuopin.php">作品案例</a></li>
+				<li><a href="msmd.php">名师团队</a></li>
+				<li><a href="doubt.php">常见问题</a></li>
+				<li><a href="customer.php?type=3">联系我们</a></li>
+			</ul>
+		</div>
+		<div class="top_tou"><a href="{$domain}/dzywap/"><img src="images/logo.png" height="23" /></a></div>
+		{if $hovernav!='index'}<div class="top_fanhui"><a href="javascript:history.go(-1)"><img src="images/fanhui.png" height="50px"/></a></div>{/if}
+	<script type="text/javascript">
+		$("#top .top_nav_img").click(function(){
+			$(this).siblings(".top_nav_list").slideToggle();
+		})
+	</script>
+</div>
+<!--公司相册banner轮播-->
+<div id="fsD1" class="focus">
+
+	<div id="D1pic1" class="fPic">
+    {section name=sn loop=$ads}
+		<div class="fcon"><a {if $ads[sn].link}href="{$ads[sn].link}"{/if}><img src="../uploads/{$ads[sn].pic}" /></a></div>
+    {/section}
+	</div>
+	
+	<div class="fbg">
+		<div class="D1fBt" id="D1fBt">
+        {section name=sn loop=$ads}
+			<a href="#"><i>{$smarty.section.sn.index+1}</i></a>
+        {/section}
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+Qfast.add('widgets', { path: "js/terminator2.2.min.js", type: "js", requires: ['fx'] });  
+Qfast(false, 'widgets', function () {
+	K.tabs({
+		id: 'fsD1',   //焦点图包裹id  
+		conId: "D1pic1",  //** 大图域包裹id  
+		tabId:"D1fBt",  
+		tabTn:"a",
+		conCn: '.fcon', //** 大图域配置class       
+		auto: 1,   //自动播放 1或0
+		effect: 'fade',   //效果配置
+		eType: 'click', //** 鼠标事件
+		pageBt:true,//是否有按钮切换页码
+		bns: ['.prev', '.next'],//** 前后按钮配置class                          
+		interval: 3000  //** 停顿时间  
+	}) 
+})  
+</script>
